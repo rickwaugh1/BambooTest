@@ -1,0 +1,30 @@
+# Config file for ESP application. Leave this comment in so you can find the g**d**n !($*#*(%*$)) error logs later
+# Note! DO NOT FORGET THE INDENTS. Must be correct YAML. Also, for things like the second line of the files
+# area, IT MUST INDENTED UNDER THE FILES
+
+# If you do not specify a namespace, the default used is aws:elasticbeanstalk:application:environment
+option_settings:
+  - namespace: aws:elasticbeanstalk:application:environment
+    option_name: NODE_ENV
+    value: #environment#
+  - namespace: aws:elasticbeanstalk:container:nodejs
+    option_name: NodeVersion
+    value: 0.12.6
+  - namespace: aws:autoscaling:trigger
+    option_name: LowerThreshold
+    value: 30
+  - namespace: aws:autoscaling:trigger
+    option_name: MeasureName
+    value: CPUUtilization
+  - namespace: aws:autoscaling:trigger
+    option_name: UpperThreshold
+    value: 70
+  - namespace: aws:autoscaling:trigger
+    option_name: Unit
+    value: Percent
+  - namespace: aws:elasticbeanstalk:application
+    option_name: Application Healthcheck URL
+    value: /load_balance_test
+  - namespace: aws:elasticbeanstalk:command
+    option_name: Timeout
+    value: 1800

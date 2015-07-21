@@ -1,0 +1,5 @@
+exports.config =
+{
+	run_as_cluster: #run_as_cluster#,
+	winston_logging_level: "#winston_logging_level#"
+};
