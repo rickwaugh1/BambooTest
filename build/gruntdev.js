@@ -7,7 +7,6 @@ module.exports = function (grunt) {
             options:
             {
                 application: 'devtest',
-                profile: "default",
                 region: "us-west-2"
             },
             dev: {
