@@ -6,13 +6,13 @@ module.exports = function (grunt) {
          {
             options:
             {
-                application: 'devtestxx',
+                application: 'devtest',
                 region: "us-west-2"
             },
             dev: {
                 options:
                 {
-                    environment: 'devtestxx'
+                    environment: 'devtestx'
                 },
                 files:[
                   {cwd:'../config/',src:['**'],dest:'config/',expand:true},
