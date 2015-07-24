@@ -16,7 +16,7 @@ var params =
 	ApplicationName: applicationName,
 	EnvironmentNames:
 	[
-	    environmentName;
+	    environmentName
 	]
 };
 
