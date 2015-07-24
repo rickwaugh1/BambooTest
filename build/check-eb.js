@@ -60,7 +60,6 @@ function checkEBS()
 			}
 			else
 			{
-				console.log('wtf')
 				setTimeout(function()
 				{
 					currentTimeout++;
