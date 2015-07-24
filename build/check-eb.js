@@ -1,18 +1,26 @@
+/* Elastic Beanstalk status checker
+   Loops and checks for the status of EB, and fails after a certain time if that status is not found
+*/
+
+var statusToCheckFor = process.argv[2];
+var applicationName = process.argv[3];
+var environmentName = process.argv[4];
+var regionName = process.argv[5];
+var timeout = process.argv[6];
+
 var AWS = require('aws-sdk');
-AWS.config.update({region: 'us-west-2'});
+AWS.config.update({region: regionName});
 
 var params =
 {
-	ApplicationName: 'devtest',
+	ApplicationName: applicationName,
 	EnvironmentNames:
 	[
-	    'devtestx'
+	    environmentName;
 	]
 };
 
 var elasticbeanstalk = new AWS.ElasticBeanstalk();
-
-var timeout = (1000 * 60 * 10);
 
 var currentTimeout = 0;
 
@@ -53,7 +61,7 @@ function checkEBS()
 				console.log("Status is " + environmentStatus + " timeout is at " + currentTimeout);
 				setTimeout(function()
 				{
-					currentTimeout = currentTimeout + 1000;
+					currentTimeout++;
 					checkEBS();
 				}, 1000);
 			}
