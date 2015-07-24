@@ -32,13 +32,13 @@ function checkEBS()
 	{
 		if (err)
 		{
-			console.log(err);
+			throw new Error(err.message);
 		}
 		else
 		{
 			var environments = data["Environments"];
 
-			var environmentStatus = "Not Ready";
+			var environmentStatus = "";
 
 			environments.forEach(function(environment)
 			{
@@ -48,13 +48,13 @@ function checkEBS()
 				}
 			});
 
-			if (environmentStatus != "Ready" && currentTimeout >= timeout)
+			if (environmentStatus != statusToCheckFor && currentTimeout >= timeout)
 			{
-				console.log("this puppy is broken");
+				throw new Error("Checking for environment status " + statusToCheckFor + " timed out");
 			}
-			else if (environmentStatus == "Ready")
+			else if (environmentStatus == statusToCheckFor)
 			{
-				console.log("It's good");
+				console.log("Status " + statusToCheckFor + " found after " + currentTimeout + " seconds");
 			}
 			else
 			{
