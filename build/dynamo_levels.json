@@ -1,0 +1,80 @@
+[
+	{
+		"level":0,
+		"tableParams":
+		[
+			{
+			    "TableName": "dynamo_schema_level",
+			    "ProvisionedThroughput":
+			    {
+			        "ReadCapacityUnits": 1,
+			        "WriteCapacityUnits": 1
+			    },
+			    "KeySchema":
+			    [
+			        {"AttributeName": "level", "KeyType": "HASH"}
+			    ],
+			    "AttributeDefinitions":
+			    [
+			        {"AttributeName": "level", "AttributeType": "N"}
+			    ]
+			},
+			{
+			    "TableName": "dynamo_test",
+			    "ProvisionedThroughput":
+			    {
+			        "ReadCapacityUnits": 1,
+			        "WriteCapacityUnits": 1
+			    },
+			    "KeySchema":
+			    [
+			        {"AttributeName": "typex", "KeyType": "HASH"}
+			    ],
+			    "AttributeDefinitions":
+			    [
+			        {"AttributeName": "typex", "AttributeType": "S"}
+			    ]
+			}
+		],
+		"dataScripts": "BuildSchemaLevel"
+	},
+	{
+		"level":1,
+		"tableParams":
+		[
+			{
+			    "TableName": "dynamo_schema_level_1",
+			    "ProvisionedThroughput":
+			    {
+			        "ReadCapacityUnits": 1,
+			        "WriteCapacityUnits": 1
+			    },
+			    "KeySchema":
+			    [
+			        {"AttributeName": "level", "KeyType": "HASH"}
+			    ],
+			    "AttributeDefinitions":
+			    [
+			        {"AttributeName": "level", "AttributeType": "N"}
+			    ]
+			},
+			{
+			    "TableName": "dynamo_test_1",
+			    "ProvisionedThroughput":
+			    {
+			        "ReadCapacityUnits": 1,
+			        "WriteCapacityUnits": 1
+			    },
+			    "KeySchema":
+			    [
+			        {"AttributeName": "typex", "KeyType": "HASH"}
+			    ],
+			    "AttributeDefinitions":
+			    [
+			        {"AttributeName": "typex", "AttributeType": "S"}
+			    ]
+			}
+		],
+		"dataScripts": "BuildSchemaLevel1"
+	}
+]

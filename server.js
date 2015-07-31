@@ -14,8 +14,12 @@ require("./global/utility.js");
 
 // include Express
 var Express = require("express");
-
 var server = Express();
+var bodyParser = require("body-parser");
+
+//Here we are configuring express to use body-parser as middle-ware.
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
 
 //set up directory to serve view files
 server.use(Express.static('./views'));

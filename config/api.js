@@ -14,11 +14,10 @@ exports.API =
 	{
 	},
 	"GET":
-	{
-		"/test":											    {endpoint: TestController.test,										check: none},
-	},
+	{	},
 	"PUT":
 	{
+		"/test":											    {endpoint: TestController.test,										check: none},
 	},
 	"DELETE":
 	{

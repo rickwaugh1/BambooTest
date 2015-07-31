@@ -30,10 +30,8 @@ function checkEBS()
 {
 	elasticbeanstalk.describeEnvironments(params, function(err, data)
 	{
-		console.log(data)
 		if (err)
 		{
-			console.log('Blew up')
 			throw new Error(err.message);
 		}
 		else
@@ -62,6 +60,7 @@ function checkEBS()
 			{
 				setTimeout(function()
 				{
+					console.log("Status is " + environmentStatus + " after " + currentTimeout + " seconds");
 					currentTimeout++;
 					checkEBS();
 				}, 1000);
