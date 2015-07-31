@@ -23,7 +23,8 @@
 	"mocha": "2.2.5",
 	"mocha-bamboo-reporter": "1.1.0",
 	"request": "2.60.0",
-	"should": "7.0.2"
+	"should": "7.0.2",
+	"grunt-cli":"0.1.13"
   },
 	"dependencies": {
 		"dynamodb-doc": "^1.0.0"
